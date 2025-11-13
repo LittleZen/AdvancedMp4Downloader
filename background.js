@@ -82,14 +82,14 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
 async function updateUIAndMenus() {
   try { await chrome.contextMenus.removeAll(); } catch (_) {}
   if (enabled) {
-    chrome.contextMenus.create({ id: 'dl-mp4', title: 'Scarica MP4', contexts: ['link','video','audio'] });
-    chrome.contextMenus.create({ id: 'find-mp4', title: 'Trova & scarica MP4 nella pagina', contexts: ['page'] });
+    chrome.contextMenus.create({ id: 'dl-mp4', title: 'Download MP4', contexts: ['link','video','audio'] });
+    chrome.contextMenus.create({ id: 'find-mp4', title: 'Find & download MP4 on page', contexts: ['page'] });
     await chrome.action.setBadgeText({ text: '' });
-    await chrome.action.setTitle({ title: 'Scarica MP4 (attivo)' });
+    await chrome.action.setTitle({ title: 'Download MP4 (active)' });
   } else {
     await chrome.action.setBadgeBackgroundColor({ color: '#d00' });
     await chrome.action.setBadgeText({ text: 'OFF' });
-    await chrome.action.setTitle({ title: 'Scarica MP4 (disattivo)' });
+    await chrome.action.setTitle({ title: 'Download MP4 (inactive)' });
   }
 }
 
@@ -136,8 +136,8 @@ async function showExcludedNotification(origin) {
     const nid = 'excluded-' + Date.now();
     const opts = {
       type: 'basic',
-      title: 'Sito escluso',
-      message: `L'estensione è disattivata su ${origin}. Apri il popup per rimuovere l'esclusione.`,
+      title: 'Site excluded',
+      message: `The extension is disabled on ${origin}. Open the popup to remove the exclusion.`,
       iconUrl: chrome.runtime.getURL('icon48.png')
     };
     return new Promise((resolve) => {
