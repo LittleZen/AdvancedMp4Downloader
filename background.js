@@ -83,13 +83,13 @@ async function updateUIAndMenus() {
   try { await chrome.contextMenus.removeAll(); } catch (_) {}
   if (enabled) {
     chrome.contextMenus.create({ id: 'dl-mp4', title: 'Download MP4', contexts: ['link','video','audio'] });
-    chrome.contextMenus.create({ id: 'find-mp4', title: 'Find & download MP4 on page', contexts: ['page'] });
+    chrome.contextMenus.create({ id: 'find-mp4', title: 'Download current MP4', contexts: ['page'] });
     await chrome.action.setBadgeText({ text: '' });
-    await chrome.action.setTitle({ title: 'Download MP4 (active)' });
+    await chrome.action.setTitle({ title: 'Download MP4 (active)' }); // probably outdated
   } else {
-    await chrome.action.setBadgeBackgroundColor({ color: '#d00' });
+    await chrome.action.setBadgeBackgroundColor({ color: '#d00' }); // probably outdated
     await chrome.action.setBadgeText({ text: 'OFF' });
-    await chrome.action.setTitle({ title: 'Download MP4 (inactive)' });
+    await chrome.action.setTitle({ title: 'Download MP4 (inactive)' }); // probably outdated
   }
 }
 
