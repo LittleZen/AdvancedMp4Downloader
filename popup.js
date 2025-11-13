@@ -26,6 +26,8 @@ async function init() {
   // display without scheme and without leading www. for a cleaner look
   const displayOrigin = currentOrigin ? currentOrigin.replace(/^https?:\/\//i, '').replace(/\/$/, '').replace(/^www\./i, '') : '—';
   siteOriginEl.textContent = displayOrigin;
+  // show full origin on hover
+  siteOriginEl.title = currentOrigin || '';
 
   // reflect blacklist state
   if (siteToggleBtn) {
