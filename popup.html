@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="color-scheme" content="light dark">
@@ -13,16 +13,22 @@
 <body>
   <div class="row">
     <div>
-      <strong>Estensione</strong><br/>
-      <span id="status">Stato: …</span>
+      <strong>Extension</strong><br/>
+      <span id="status">Status: …</span>
     </div>
     <label>
       <input id="toggle" type="checkbox">
     </label>
   </div>
-  <p class="hint">Disattiva per sospendere sblocco click destro e pulsanti “Scarica MP4”.</p>
-  <div style="margin-top:12px; text-align:center;">
-    <button id="reloadAllTabsBtn" style="padding:8px 10px; font-size:13px;">Aggiorna tutte le tab</button>
+  <p class="hint">This extension allows you to download MP4 videos from web pages and force the right-click context menu to be enabled on video elements.</p>
+    <div style="margin-top:12px; text-align:center;">
+    <button id="reloadAllTabsBtn" style="padding:8px 10px; font-size:13px;">Reload all tabs</button>
+  </div>
+  <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
+    <div class="hint" style="text-align:left;">Current site: <span id="siteOrigin">—</span></div>
+    <div style="text-align:center;">
+      <button id="siteToggleBtn" style="padding:8px 10px; font-size:13px;">Exclude this site</button>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
