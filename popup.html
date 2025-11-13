@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="light dark">
+  <style>
+    body { font: 14px/1.4 system-ui, sans-serif; margin: 14px; width: 240px; }
+    .row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .hint { margin-top:10px; color:gray; font-size:12px; }
+    input[type="checkbox"] { width: 44px; height: 24px; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <strong>Estensione</strong><br/>
+      <span id="status">Stato: …</span>
+    </div>
+    <label>
+      <input id="toggle" type="checkbox">
+    </label>
+  </div>
+  <p class="hint">Disattiva per sospendere sblocco click destro e pulsanti “Scarica MP4”.</p>
+  <div style="margin-top:12px; text-align:center;">
+    <button id="reloadAllTabsBtn" style="padding:8px 10px; font-size:13px;">Aggiorna tutte le tab</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

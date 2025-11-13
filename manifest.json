@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Scarica MP4 + RightClick Unlock",
+  "version": "1.5.0",
+  "description": "Scarica MP4 facilmente e sblocca automaticamente il click destro su ogni pagina.",
+  "permissions": [
+    "contextMenus",
+    "downloads",
+    "scripting",
+    "activeTab",
+    "notifications",
+    "storage",
+    "tabs"             
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Scarica MP4 (attivo)",
+    "default_popup": "popup.html"
+  }
+}
